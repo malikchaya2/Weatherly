@@ -1,7 +1,7 @@
 // Author: Chaya Malik
 var APIkey = "49d120d850378d2f007ba95ae5572cbc";
 var units = "imperial";
-var url = 'http://api.openweathermap.org/data/2.5/weather?';
+var url = 'https://api.openweathermap.org/data/2.5/weather?';
 var result = "hi"; 
 var data; 
 var hourdata; 
