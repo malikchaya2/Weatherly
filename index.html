@@ -1,0 +1,223 @@
+<!-- Author: Chaya Malik -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="weather.js"> </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="styleWeather.css">
+    <link rel="shortcut icon" href="a.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Chaya's Weather</title>
+</head>
+<body onload="start('New York', 'q' )" >
+   
+
+<!-- HEADER -->
+<div>
+    <nav class="navbar navbar-default c neg">
+        <div class="container-fluid ">
+            <div class="navbar-header">
+            <a class="navbar-brand"  href="#">
+                <img class="small" alt="Brand" src="https://media.giphy.com/media/SXG1ows1YHKBa/giphy.gif">
+            </a>
+            <a class="navbar-brand bold" ><span class="txtc">Weatherly</span>  </a>
+            </div>
+            <!-- SEARCH BAR -->
+            <div id="search" class=" navbar-right">
+                    <form  onSubmit="get(); return false;" class="navbar-form ml-auto">
+                            <div class="form-group  mb-0">
+                                    <div class="row  mb-0">
+                                        <div class="col-9">
+                                                <input id="input" class="form-control"  type="text"  placeholder="Location" required >
+                                        </div>
+                                        <div class="col-2">
+                                                <input class = "btn btn-light" type="Submit" value="Search"  ></div>
+                                        </div>
+                                    </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="searchType1" name="searchType1" class="custom-control-input" value = "q" required>
+                                        <label class="custom-control-label" for="searchType1">City</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="searchType2" name="searchType1" class="custom-control-input" value = "zip">
+                                        <label class="custom-control-label" for="searchType2">Zip</label>
+                                </div>
+                        </form>
+            </div>
+            <!-- END SEARCH -->
+        </div>
+            
+     </nav> 
+</div>
+<!-- CONTAINER FOR WHOLE SITE MINUS HEADER -->
+    <div class="container-fluid mt-0">
+        <!-- BEGIN CURRENT FORCAST -->
+        <div class="row">
+            <div class="col-10">
+                <div class="row text-center align-self-center">
+                        <!-- CURRENT FORCAST IMAGE AND HEADER -->
+                    <div class="col-7 align-self-center ">
+                           
+                            <div class="row text-center ">
+                                <div class="col-6"></div>
+                                <div class="col-6 align-self-center"> 
+                                    <div class="header txtin0 text-center ">
+                                            <h1>Today's Forcast</h1>
+                                    </div>
+                                    <div id = "loc" class="txtin4"> New York</div>
+                                        <!-- CURRENT TEMP AND DESCRIPTION  -->
+                                    <div class="row mt-50 text-center cent  pt-5">
+                                        <div class="col-4 text-right pr-0">
+                                            
+                                            <div id="temp" class= "txtin">47°F</div>
+                                            <div id="description" class="spc txtin2">Snow</div>
+                                        </div>
+                                        <div class="col-8 pl-5  text-right pt-2">
+                                            
+                                            <div class=" txtin3">Cloudiness: <span id = "pe"></span></div>
+                                            <div  class=" txtin3">Humidity: <span id = "humid"></div>  
+                                            <div  class=" txtin3">  Wind: <span id = "wind"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-5  mt-4 ">
+                            <div class="header txtin0 text-left">
+                                    <div class = "mt-3 " id="pic">
+                                            <img id="imgicon" class="med " alt="Brand" src="https://media.giphy.com/media/2AMBtjL26O65qciYjR/giphy.gif">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+  <!-- END CURRENT FORCAST -->
+
+  <!-- HOURLY -->
+  <hr>
+  <div class="row  justify-content-center text-center nom "> 
+    <div class=" col-2 colg nom">
+            <div id = "hourlabel0" class="label">8:00 AM </div>
+            <img id = "hourimg0" class="smaller" alt="Brand" src=" https://media.giphy.com/media/fdzUGVIz7C98FEtfqT/giphy.gif">  
+            <div id="temp" class= "mt-3"> 
+                    <span class = "double" id="hourtemp0">47°F </span>
+                </div>
+                <div id="hourdesc0" class="txtin2 remove">Snow</div>   
+    </div>
+    <div class=" col-2 colg nom">
+            <div id = "hourlabel1" class="label">9:00 AM </div>
+            <img id = "hourimg1" class="smaller" alt="Brand" src="https://media.giphy.com/media/eei6N9FK98dbQqN7g8/giphy.gif">  
+            <div id="temp" class= "mt-3"> 
+                <span class = "double" id="hourtemp1">47°F </span>
+            </div>
+            <div id="hourdesc1" class="txtin2 remove">Snow</div>  
+            
+    </div>
+    <div class="col-2 colg nom">
+        <div id = "hourlabel2" class="label">10:00 AM </div>
+        <img id = "hourimg2" class="smaller" alt="Brand" src="https://media.giphy.com/media/h5SbEEFpDs84U/giphy.gif">  
+        <div id="temp" class= "mt-3"> 
+                <span class = "double" id="hourtemp2">47°F </span>
+            </div>
+            <div id="hourdesc2" class="txtin2 remove">Snow</div>  
+</div>
+    <div class="col-2 colg nom">
+            <div id = "hourlabel3" class="label">10:00 AM </div>
+            <img id = "hourimg3" class="smaller" alt="Brand" src="https://media.giphy.com/media/h5SbEEFpDs84U/giphy.gif">  
+            <div id="temp" class= "mt-3"> 
+                    <span class = "double" id="hourtemp3">47°F </span>
+                </div>
+                <div id="hourdesc3" class="txtin2 remove">Snow</div>  
+    </div>
+    <div class="col-2 colg nom">
+            <div id = "hourlabel4" class="label">10:00 AM </div>
+            <img id = "hourimg4" class="smaller" alt="Brand" src="https://media.giphy.com/media/h5SbEEFpDs84U/giphy.gif">  
+            <div id="temp" class= "mt-3"> 
+                    <span class = "double" id="hourtemp4">47°F </span>
+                </div>
+                <div id="hourdesc4" class="txtin2 remove">Snow</div>  
+    </div>
+    <div class="col-2 colg nom">
+        <div id = "hourlabel5" class="label">10:00 AM </div>
+        <img id = "hourimg5" class="smaller" alt="Brand" src="https://media.giphy.com/media/h5SbEEFpDs84U/giphy.gif">  
+        <div id="temp" class= "mt-3"> 
+                <span class = "double" id="hourtemp5">47°F </span>
+            </div>
+            <div id="hourdesc5" class="txtin2 remove">Snow</div>  
+    </div>
+
+</div>
+<hr>
+    <!-- DAILY -->
+    <div class="row text-center justify-content-center nom "> 
+                    <div  class="col-2 colg nom">
+                            <div id = "daylabel0" class="label">Today</div>
+                        <img id = "imgdaily0" class="tiny" alt="Brand" src=" https://media.giphy.com/media/fdzUGVIz7C98FEtfqT/giphy.gif"> 
+                        <div  class= mt-4>
+                            <span  id = " " class = "high" >H: </span> 
+                            <span  id = "hidaily0" class = "double " id="hi1">47°F </span>
+                            <span  id = " " class = "high" >L: </span> 
+                            <span  id = "lowdaily0" class="doublel" id="low1">40°F </span>
+                            <div id="desdaily0" class="txtin2">Snow</div>  
+                        </div>
+                    </div>
+                    <div  class="  col-2 colg nom">
+                            <div id = "daylabel1" class="label">Sunday</div>
+                         <img id = "imgdaily1" class="tiny" alt="Brand" src=" https://media.giphy.com/media/26BRAojlUnm9hXC9y/giphy.gif"> 
+                        <div class= mt-4>
+                            <span  id = " " class = "high" >H: </span> 
+                            <span  id = "hidaily1" class = "double" id="hi1">47°F </span>
+                            <span  id = " " class = "high" >L: </span> 
+                            <span  id = "lowdaily1" class="doublel" id="low1">40°F </span>
+                            <div id="desdaily1" class="txtin2">Snow</div>  
+                        </div>
+                        </div>
+                    <div  class="  col-2 colg nom">
+                        <div id = "daylabel2" class="label">Monday</div>
+                        <img id = "imgdaily2" class="tiny" alt="Brand" src=" https://media.giphy.com/media/12zxWWVMXNDOy4/giphy.gif"> 
+                        
+                        <div  class= mt-4>
+                            <span  id = " " class = "high" >H: </span> 
+                            <span  id = "hidaily2" class = "double" id="hi1">47°F </span>
+                            <span  id = " " class = "high" >L: </span> 
+                            <span  id = "lowdaily2" class="doublel" id="low1">40°F </span>
+                            <div id="desdaily2" class="txtin2">Snow</div>  
+                        </div>
+                    </div>
+                    <div  class="  col-2 colg nom">
+                        <div id = "daylabel3" class="label">Tuesday</div>   
+                        <img id = "imgdaily3" class="tiny" alt="Brand" src="https://media.giphy.com/media/2AMBtjL26O65qciYjR/giphy.gif"> 
+                        
+                        <div  class= mt-4>
+                            <span  id = " " class = "high" >H: </span> 
+                            <span  id = "hidaily3" class = "double" id="hi1">47°F </span>
+                            <span  id = " " class = "high" >L: </span> 
+                            <span  id = "lowdaily3" class="doublel" id="low1">40°F </span>
+                            <div id="desdaily3" class="txtin2">Snow</div>  
+                        </div>
+                    </div>
+                    <div  class="col-2 colg nom">
+                        <div id = "daylabel4" class="label">Wednesday</div>
+                        <img id = "imgdaily4" class="tiny" alt="Brand" src="https://media.giphy.com/media/X7OrJ0XT3r6dWx4131/giphy.gif"> 
+                        
+                        <div  class= mt-4>
+                            <span  id = " " class = "high" >H: </span> 
+                            <span  id = "hidaily4" class = "double" id="hi1">47°F </span>
+                            <span  id = " " class = "high" >L: </span> 
+                            <span  id = "lowdaily4" class="doublel" id="low1">40°F </span> 
+                            <div id="desdaily4" class="txtin2">Snow</div>  
+                        </div>
+                    </div>
+    </div>
+</div>
+</body>
+</html>
