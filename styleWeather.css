@@ -1,0 +1,158 @@
+/* Author: Chaya Malik */
+.label{
+    background: #6AB7DF; 
+    color: #E2EEEE;
+    border-radius: 4px;  
+}
+.small{
+    width: 300px;
+    height: 150px; 
+
+    padding: 0; 
+}
+.smaller{
+    width: 80%;
+    height: 55%; 
+    padding: 0; 
+}
+.tiny{
+    width: 80%;
+    height: 55%; 
+    padding: 0; 
+}
+/* .tiny{
+    width:100%;
+    height: 50%; 
+    padding: 0; 
+} */
+.smm{
+    color: #3E3C63; 
+    font-weight: 600;
+    font-size:20px;
+    
+}
+.smm1{
+    color: #3E3C63; 
+    font-weight: 600;
+    font-size:27px;
+    
+}
+.spc{
+    line-height: 18pt;
+}
+
+.c{
+    background: #E2EEEE; 
+    text-align: center; 
+}
+.bold{
+    padding-left: 0; 
+    margin-left: 0; 
+    /* padding-top: 200px;  */
+    margin-top: 2000; 
+    font-weight: 900;
+    font-size:40px;
+    color: #3E3C63; 
+ 
+}
+.txtc{
+    color: #3E3C63; 
+}
+.navbar-brand{
+    margin:0 !important; 
+}
+
+.color{
+    background: red; 
+   
+}
+.color2{
+    background: green; 
+   
+}
+.color-3{
+    background: purple;
+}
+.color-4{
+    background: orange;
+}
+.neg{
+    margin-right: -1px; 
+    margin-left: -1px; 
+}
+.colb{
+    background: blue; 
+}
+.med{
+    width: 90%; 
+    height: 90%
+}
+.colg{
+   /* background: #EEEEEE; */
+   border-radius: 4px; 
+   border: 1px solid #EEEEEE; 
+   /* padding-bottom: -3px !important; */
+   margin-bottom: -3px !important; 
+  padding-bottom: -1;
+}
+
+.txtin0{
+    /* color: #ACABBC;  */
+    color: #F77455; 
+    /* color: #F7E146; */
+    font-weight: 900;
+    font-size:40px;
+}
+.txtin{
+    color: #3E3C63; 
+    font-weight: 900;
+    font-size:38px;
+}
+.txtin2{
+    color: #3E3C63; 
+    font-weight: 500;
+    font-size:27px;
+   
+}
+.txtin3{
+    color: #3E3C63; 
+    font-weight: 400;
+    font-size:19px;
+}
+.txtin4{
+    color: #ACABBC; 
+    font-weight: 600;
+    font-size:14px;
+}
+.cent{
+    margin-right: 3; 
+}
+.high{
+    color:#ACABBC; 
+    font-weight: 500;
+    font-size:15px;
+}
+.double{
+    color: #3E3C63; 
+    font-weight: 800;
+    font-size:28px;  
+}
+.doublel{
+   
+    color:  #75738F; 
+    font-weight: 800;
+    font-size:28px; 
+}
+
+.no-m {
+    padding-bottom:0;
+    margin-bottom:0;
+    height: auto; 
+   
+}
+.remove{
+    margin-bottom: -20px; 
+}
+.ww{
+    width: 100%; 
+}
