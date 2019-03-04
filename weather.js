@@ -93,7 +93,7 @@ function weatherResults(callback){
 }
 function setHTML(){
      console.log("setHTML. nextup: next");
-    document.getElementById("loc").innerHTML = loc; 
+    document.getElementById("loc").innerHTML = data.name; 
     document.getElementById("temp").innerHTML =Math.floor(data.main.temp)  + "°F"; 
     document.getElementById("description").innerHTML = data.weather[0].main;
     if(data.weather[0].main == "Clouds"){
