@@ -14,6 +14,9 @@ Demo: https://malikchaya2.github.io/Weatherly/
 **NOTE:** If you see this: 
 <img src='https://media.giphy.com/media/k7y7J6GzdBji9VNUS5/giphy.gif' width='70px' alt='thermometer' /> 
 then the scripts have most likely **not loaded**. Chrome is blocking it since "This page is trying to load scripts from unauthenticated sources". (The page loads over HTTPS, but requests from the open weather api over http, causing the scripts to be blocked). 
+<img src='weatherly.gif' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 # To Run
 To run on your personal computer: 
