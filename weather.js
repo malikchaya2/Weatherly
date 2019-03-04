@@ -53,11 +53,11 @@ function start(locate, search){
 
 function first(callback){
     console.log("first. next up: quer");
-    quer('http://api.openweathermap.org/data/2.5/weather?', setHTML, next);
+    quer('https://api.openweathermap.org/data/2.5/weather?', setHTML, next);
 }
 function next(){
     console.log("next. next up: quer");
-    quer( 'http://api.openweathermap.org/data/2.5/forecast?', hourly);
+    quer( 'https://api.openweathermap.org/data/2.5/forecast?', hourly);
 }
 
 function get(){
